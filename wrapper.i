@@ -17,8 +17,10 @@
  /* Put header files here or function declarations like below */
 
  %}
-//%include "./xsens/public/xspublic/xscontroller/xscallback.h"
-//%include "./xsens/public/xspublic/xscontroller/callbackmanagerxda.h"
+%include "./xsens/include/xscontroller/xscallbackplainc.h"
+%include "./xsens/public/xspublic/xscontroller/xscallback.h"
+%include "./xsens/public/xspublic/xscontroller/callbackmanagerxda.h"
+
 #define XSNOEXPORT
 #define XSNOCOMEXPORT 
 #define XSENS_NO_PORT_NUMBERS
@@ -26,7 +28,6 @@
 
 #define XSTYPES_DLL_API
 
-%include "./xsens/public/xspublic/xscontroller/xscontrol_def.h"
 
 %include  "./xsens/public/xspublic/xscontroller/xsdevice_def.h"
 
