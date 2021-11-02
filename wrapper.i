@@ -2,6 +2,9 @@
  %module example
  %rename(XsScannerClass) XsScanner;
  %rename(XsDataPacketClass) XsDataPacket;
+
+ //define templates
+ %template(XsOutputArray) XsArrayImpl< XsOutputConfiguration,g_xsOutputConfigurationArrayDescriptor,XsOutputConfigurationArray >;
  
  %{
 

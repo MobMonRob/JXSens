@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "xsscanner.h": "c"
+        "xsscanner.h": "c",
+        "xsens_mutex.h": "c"
     }
 }
