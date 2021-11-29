@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "xsscanner.h": "c",
-        "xsens_mutex.h": "c"
+        "xsens_mutex.h": "c",
+        "xscontrol_def.h": "c",
+        "xsthread.h": "c"
     }
 }
