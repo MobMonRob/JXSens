@@ -1,12 +1,72 @@
 /* wrapper.i */
 %module example
+%include "stdint.i"
 //versuch SWIGTYPE_p_uint_8 zu verhindern
-typedef unsigned char uint_8;
+typedef unsigned char uint8_t;
 
 %rename(XsScannerClass) XsScanner;
 %rename(XsDataPacketClass) XsDataPacket;
 %include "cpointer.i" 
 %include "primitive_type_ptr.i"
+
+//avoids SWIGTYPE_p_Communicator.java
+%include "./xsens/public/xspublic/xscontroller/communicator.h"
+//%newobject communicator;
+//Communicator* communicator();
+
+//avoids SWIGTYPE_p_Datalogger.java
+%include "./xsens/public/xspublic/xscontroller/datalogger.h"
+//%newobject logFileInterface();
+//DataLogger* logFileInterface(std::unique_ptr<xsens::Lock>& myLock);
+
+//avoids SWIGTYPE_p_Datapacket
+%include "./xsens/public/xspublic/xstypes/datapacket_p.h"
+
+#define XSTYPES_DLL_API 
+//avoids SWIGTYPE_p_f_p_q_const__void_p_q_const__void__int.java
+%ignore XsArray::XsArray_removeDuplicatesPredicate;
+%ignore xsarray::XsArray_removeDuplicatesPredicate;
+
+//avoids iprotocolhandler Swigtype
+%include "./xsens/public/xspublic/xscontroller/iprotocolhandler.h"
+
+//avoid OpenPortStage Swigtype
+%include "./xsens/public/xspublic/xscontroller/openportstage.h"
+
+
+//attempt to remove Swigtype CallbackPlainC files
+//ignore all bytearray usages
+%ignore XsByteArray;
+%ignore XsCallbackPlainC::m_onMessageDetected;
+%ignore XsCallbackPlainC::m_onTransmissionRequest;
+
+//ignore all xsdeviceptrarray usages
+%ignore XsDevicePtrArray;
+%ignore XsCallbackPlainC::m_onAllLiveDataAvailable;
+%ignore XsCallbackPlainC::m_onAllBufferedDataAvailable;
+%ignore XsCallbackPlainC::m_onAllDataAvailable;
+%ignore XsCallbackPlainC::m_onAllRecordedDataAvailable;
+
+//ignore all xsdatapacket usages
+%ignore XsDataPacket;
+%ignore XsCallbackPlainC::m_onLiveDataAvailable;
+%ignore XsCallbackPlainC::m_onBufferedDataAvailable;
+%ignore XsCallbackPlainC::m_onDataAvailable;
+%ignore XsCallbackPlainC::m_onRecordedDataAvailable;
+
+//ignore all xsdatapacketptrarray usages
+%ignore XsDataPacketPtrArray;
+%ignore XsCallbackPlainC::m_onAllLiveDataAvailable;
+%ignore XsCallbackPlainC::m_onAllBufferedDataAvailable;
+%ignore XsCallbackPlainC::m_onAllDataAvailable;
+%ignore XsCallbackPlainC::m_onAllRecordedDataAvailable;
+
+//ignore all xsstring usages
+%ignore XsString;
+%ignore XsCallbackPlainC::m_onProgressUpdated;
+%ignore XsCallbackPlainC::m_onRestoreCommunication;
+
+%include "./xsens/public/xspublic/xscontroller/xscallbackplainc.h"
 
 //Wird vermutlich implizit included sobald -java flag gesetzt ist
 %include "java.swg"

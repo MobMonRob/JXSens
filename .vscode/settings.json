@@ -3,6 +3,7 @@
         "xsscanner.h": "c",
         "xsens_mutex.h": "c",
         "xscontrol_def.h": "c",
-        "xsthread.h": "c"
+        "xsthread.h": "c",
+        "xsdatapacket.h": "c"
     }
 }
