@@ -1,6 +1,8 @@
 %module tryout
 
+
 %{
+#define XSTYPES_DLL_API
 #include "./xsens/include/xsensdeviceapi/xdaconfig.h"
 #include "./xsens/include/xsensdeviceapi/xsdeviceconfiguration.h"
 #include "./xsens/include/xsensdeviceapi/xscoordinatesystem.h"
@@ -41,7 +43,7 @@
 
 %}
 
-
+#define XSTYPES_DLL_API
 %include "./xsens/include/xsensdeviceapi/xdaconfig.h"
 %include "./xsens/include/xsensdeviceapi/xsdeviceconfiguration.h"
 %include "./xsens/include/xsensdeviceapi/xscoordinatesystem.h"

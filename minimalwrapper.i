@@ -18,15 +18,18 @@
 %rename(XsDataPacketClass) XsDataPacket;
 #define XSTYPES_DLL_API
 #define XSNOCOMEXPORT
+%rename(opSet) operator=;
 %include "./xsens/public/xspublic/xstypes/xsdatapacket.h"
 #undef XSTYPES_DLL_API
 #undef XSNOCOMEXPORT
-%include "./xsens/public/xspublic/xstypes/xsportinfo.h"
-#define XSENS_NO_PORT_NUMBERS
-%include "./xsens/public/xspublic/xscontroller/xsdevice_def.h"
-#undef XSENS_NO_PORT_NUMBERS
-#define XSNOCOMEXPORT
-%include "./xsens/public/xspublic/xscontroller/xscontrol_def.h"
+// %include "./xsens/public/xspublic/xstypes/xsportinfo.h"
+%rename(opEquals) operator==;
+%rename(opLessThen) operator<;
+// #define XSENS_NO_PORT_NUMBERS
+// %include "./xsens/public/xspublic/xscontroller/xsdevice_def.h"
+// #undef XSENS_NO_PORT_NUMBERS
+// #define XSNOCOMEXPORT
+// %include "./xsens/public/xspublic/xscontroller/xscontrol_def.h"
 #undef XSNOCOMEXPORT
 //struct XsDataPacket{};
 %{
