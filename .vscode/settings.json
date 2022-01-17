@@ -4,6 +4,9 @@
         "xsens_mutex.h": "c",
         "xscontrol_def.h": "c",
         "xsthread.h": "c",
-        "xsdatapacket.h": "c"
+        "xsdatapacket.h": "c",
+        "bitset": "c",
+        "chrono": "c",
+        "algorithm": "c"
     }
 }
