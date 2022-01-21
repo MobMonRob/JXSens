@@ -41,6 +41,7 @@
 %rename (XsFilterProfile_swapClass) XsFilterProfile_swap;
 %rename (XsFilterProfile_toStringClass) XsFilterProfile_toString;
 
+
 %rename(opSet) operator=;
 %rename(opSelfMultiplication) operator*=;
 %rename(opEquals) operator==;
@@ -142,6 +143,13 @@
 %include "../xsens/public/xspublic/xscontroller/xsaccesscontrolmode.h"
 %include "../xsens/public/xspublic/xscontroller/xsalignmentframe.h"
 
+#define XSDEPRECATED_START
+#define XSDEPRECATED 
+%include "../xsens/public/xspublic/xstypes/xsdeviceid.h"
+#undef XSDEPRECATED_START
+#undef XSDEPRECATED 
+%include "../xsens/public/xspublic/xstypes/xsfilterprofile.h"
+
 //-------------------
 // //template for outputconfigarray to deny warning 401: "nothing known about ..."
 // %ignore XsArrayImpl< XsCanOutputConfiguration,g_xsCanOutputConfigurationArrayDescriptor,XsCanOutputConfigurationArray >::begin();
@@ -217,13 +225,13 @@
 // %include "../xsens/public/xspublic/xstypes/xssyncsettingarray.h"
 
 // //if included with deffine XDA_DLL_API it doesn t properly create the java proxy classes and all stubs dissapear
-// #define XDA_DLL_API 
-// %include "../xsens/public/xspublic/xscontroller/xsdeviceconfiguration.h"
-// #undef XDA_DLL_API 
+ #define XDA_DLL_API 
+ %include "../xsens/public/xspublic/xscontroller/xsdeviceconfiguration.h"
+ #undef XDA_DLL_API 
 
 // //template for xsfilterprofile to deny warning 401: "nothing known about ..."
 // %template(XsFilterProfileArray) XsArrayImpl<XsFilterProfile,g_xsFilterProfileArrayDescriptor,XsFilterProfileArray>;
-// %include "../xsens/public/xspublic/xstypes/xsfilterprofile.h"
+ %include "../xsens/public/xspublic/xstypes/xsfilterprofile.h"
 
 // //template for xssyncsetting to deny warning 401: "nothing known about ..."
 // %template(XsSyncSettingArray) XsArrayImpl<XsSyncSetting,g_xsSyncSettingDescriptor,XsSyncSettingArray>;
