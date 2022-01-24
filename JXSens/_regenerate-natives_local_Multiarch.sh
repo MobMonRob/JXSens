@@ -7,8 +7,13 @@ cd "$scriptDir"
 source "./_bash_config.sh"
 
 run() {
-	local -r wrapLibTargetDir="$wrapLibDir/$currentTarget"
-	cp -L -l "$wrapLibTargetDir"/lib/lib* "$currentTarget"
+	clearCurrentPlatform
+	rm -rdf "$currentNativesPath"
+	mkdir -p "$currentNativesPath"
+
+	./copy-deps_Multiarch.sh
+
+	setSuccessToken
 }
 
 run_bash run $@
