@@ -35,8 +35,10 @@
 %rename (XsSyncSetting_isOutputClass) XsSyncSetting_isOutput;
 %rename (XsFilterProfile_emptyClass) XsFilterProfile_empty;
 %rename (XsDeviceConfiguration_emptyClass) XsDeviceConfiguration_empty;
-%rename (XsDeviceConfiguration_readFromMessageClass) XsDeviceConfigurationreadFromMessage;
-%rename (XsDeviceConfiguration_writeToMessageClass) XsDeviceConfigurationwriteToMessage;
+
+%rename (XsDeviceConfiguration_deviceInfo) XsDeviceConfiguration::deviceInfo(XsDeviceId const &);
+%rename (XsDeviceConfiguration_deviceInfo) XsDeviceConfiguration::deviceInfo(XsSize);
+%rename (XsDeviceConfiguration_masterInfo) XsDeviceConfiguration::masterInfo();
 %rename (XsSyncSetting_swapClass) XsSyncSetting_swap;
 %rename (XsFilterProfile_swapClass) XsFilterProfile_swap;
 %rename (XsFilterProfile_toStringClass) XsFilterProfile_toString;
@@ -64,6 +66,13 @@
 %rename(opLeftShift) operator <<;
 %rename(opRoundBrackets) operator();
 %rename(opXOr) operator^;
+
+// -----------
+//ignore C Methods
+%ignore XsDeviceConfiguration_readFromMessage;
+%ignore XsDeviceConfiguration_writeToMessage;
+// -----------
+
 
 // typedef XsArrayImpl<T, D, I> ArrayImpl;
 %include "../xsens/public/xspublic/xstypes/xsarray.h"
