@@ -7,8 +7,17 @@
 #define XS_PACKED_STRUCT_START 
 #define XS_PACKED_STRUCT_END
 
-%include "../../xsens/public/xspublic/xscontroller/xsselftestresult.h"
 %include "rename_ops.i"
+
+%rename (XsFilterProfile_emptyClass) XsFilterProfile_empty;
+%rename (XsFilterProfile_swapClass) XsFilterProfile_swap;
+%rename (XsFilterProfile_toStringClass) XsFilterProfile_toString;
+
+
+
+
+%include "../../xsens/public/xspublic/xscontroller/xsselftestresult.h"
+
 %include "cpointer.i" 
 %include "primitive_type_ptr.i"
 %include "stdint.i"
@@ -27,15 +36,13 @@
 %rename (XsFingerData_swapClass) XsFingerData_swap;
 %rename (XsSyncSetting_isInputClass) XsSyncSetting_isInput;
 %rename (XsSyncSetting_isOutputClass) XsSyncSetting_isOutput;
-%rename (XsFilterProfile_emptyClass) XsFilterProfile_empty;
+
 %rename (XsDeviceConfiguration_emptyClass) XsDeviceConfiguration_empty;
 
 %rename (XsDeviceConfiguration_deviceInfo) XsDeviceConfiguration::deviceInfo(XsDeviceId const &);
 %rename (XsDeviceConfiguration_deviceInfo) XsDeviceConfiguration::deviceInfo(XsSize);
 %rename (XsDeviceConfiguration_masterInfo) XsDeviceConfiguration::masterInfo();
 %rename (XsSyncSetting_swapClass) XsSyncSetting_swap;
-%rename (XsFilterProfile_swapClass) XsFilterProfile_swap;
-%rename (XsFilterProfile_toStringClass) XsFilterProfile_toString;
 
 
 
@@ -46,7 +53,17 @@
 // -----------
 
 
+//stringoutputtype has to be include before xsfilterprofile
+%include "../../xsens/public/xspublic/xstypes/xsstringoutputtype.h"
 
+%include "../../xsens/public/xspublic/xscontroller/xsdeviceptr.h"
+#define XSDEPRECATED_START
+#define XSDEPRECATED 
+%include "../../xsens/public/xspublic/xstypes/xsdeviceid.h"
+#undef XSDEPRECATED_START
+#undef XSDEPRECATED 
+%include "array_variations.i"
+%include "../../xsens/public/xspublic/xstypes/xsfilterprofile.h"
 
 %include "../../xsens/public/xspublic/xstypes/xsanalogindata.h"
 %include "../../xsens/public/xspublic/xstypes/xsdatapacket.h"
@@ -62,7 +79,11 @@
 
 %include "../../xsens/include/xstypes/xscandataidentifier.h"
 %include "../../xsens/public/xspublic/xstypes/xscanoutputconfiguration.h"
-%include "../../xsens/public/xspublic/xstypes/xsfilterprofile.h"
+
+
+
+
+
 %include "../../xsens/public/xspublic/xstypes/xscanframeformat.h"
 %include "../../xsens/public/xspublic/xscontroller/xsiccrepmotionresult.h"
 
@@ -97,11 +118,7 @@
 %include "../../xsens/public/xspublic/xscontroller/xsaccesscontrolmode.h"
 %include "../../xsens/public/xspublic/xscontroller/xsalignmentframe.h"
 
-#define XSDEPRECATED_START
-#define XSDEPRECATED 
-%include "../../xsens/public/xspublic/xstypes/xsdeviceid.h"
-#undef XSDEPRECATED_START
-#undef XSDEPRECATED 
+
 
 
 
