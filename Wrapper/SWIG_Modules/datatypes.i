@@ -1,5 +1,16 @@
 %module math_structures
 
+
+%{
+#include "../../xsens/public/xspublic/xstypes/xsquaternion.h"
+#include "../../xsens/public/xspublic/xstypes/xseuler.h"
+#include "../../xsens/public/xspublic/xstypes/xsmatrix.h"
+#include "../../xsens/public/xspublic/xstypes/xsvector.h"
+#include "../../xsens/public/xspublic/xstypes/xsvector3.h"
+#include "../../xsens/public/xspublic/xstypes/xsushortvector.h"
+#include "../../xsens/public/xspublic/xstypes/xsmessage.h"
+#include "../../xsens/public/xspublic/xstypes/xsstring.h"
+%}
 %rename (XsQuaternionClass) XsQuaternion;
 %rename (XsDataPacketClass) XsDataPacket;
 %rename (XsBaudrateClass) XsBaudrate;

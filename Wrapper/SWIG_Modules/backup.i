@@ -1,19 +1,6 @@
 /*minimal wrapper */
 %module types
 
-%{
-#include "../../xsens/public/xspublic/xscontroller/xsselftestresult.h"
-#include "../../xsens/public/xspublic/xstypes/xsstringoutputtype.h"
-#include "../../xsens/include/xstypes/xscandataidentifier.h"
-#include "../../xsens/public/xspublic/xscontroller/xsdeviceparameter.h"
-#include "../../xsens/public/xspublic/xscontroller/xsdeviceparameteridentifier.h"
-#include "../../xsens/public/xspublic/xstypes/xscanoutputconfiguration.h"
-#include "../../xsens/public/xspublic/xstypes/xscanframeformat.h"
-#include "../../xsens/public/xspublic/xscontroller/xsiccrepmotionresult.h"
-#include "../../xsens/public/xspublic/xscontroller/datalogger.h"
-#include "../../xsens/public/xspublic/xstypes/xsportinfo.h"
-%}
-
 #define XSTYPES_DLL_API 
 #define XSNOCOMEXPORT
 #define XSCPPPROTECTED

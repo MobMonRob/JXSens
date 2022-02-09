@@ -7,6 +7,8 @@
         "xsdatapacket.h": "c",
         "bitset": "c",
         "chrono": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "xsoutputconfigurationarray.h": "c",
+        "xsiccrepmotionresult.h": "c"
     }
 }
