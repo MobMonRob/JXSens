@@ -9,6 +9,7 @@
         "chrono": "c",
         "algorithm": "c",
         "xsoutputconfigurationarray.h": "c",
-        "xsiccrepmotionresult.h": "c"
+        "xsiccrepmotionresult.h": "c",
+        "xsrejectreason.h": "c"
     }
 }

@@ -10,6 +10,7 @@
 #include "../../xsens/public/xspublic/xstypes/xsushortvector.h"
 #include "../../xsens/public/xspublic/xstypes/xsmessage.h"
 #include "../../xsens/public/xspublic/xstypes/xsstring.h"
+#include "../../xsens/public/xspublic/xstypes/xsdatapacket.h"
 %}
 %rename (XsQuaternionClass) XsQuaternion;
 %rename (XsDataPacketClass) XsDataPacket;
@@ -64,4 +65,8 @@
 //Strings
 %ignore XsString::c_str();
 %include "../../xsens/public/xspublic/xstypes/xsstring.h"
+
+//-------------
+//datapacket
+%include "../../xsens/public/xspublic/xstypes/xsdatapacket.h"
 

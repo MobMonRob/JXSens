@@ -12,6 +12,63 @@
 #include "../../xsens/public/xspublic/xscontroller/xsiccrepmotionresult.h"
 #include "../../xsens/public/xspublic/xscontroller/datalogger.h"
 #include "../../xsens/public/xspublic/xstypes/xsportinfo.h"
+
+//using all includes results in more errors. This seems like the variant
+// #include "../../xsens/public/xspublic/xscontroller/xsselftestresult.h"
+// #include "../../xsens/public/xspublic/xstypes/xsstringoutputtype.h"
+// #include "../../xsens/public/xspublic/xscontroller/xsdeviceptr.h"
+// #include "../../xsens/public/xspublic/xstypes/xsdeviceid.h"
+// #include "../../xsens/public/xspublic/xstypes/xsfilterprofile.h"
+// #include "../../xsens/public/xspublic/xstypes/xsanalogindata.h"
+// #include "../../xsens/public/xspublic/xstypes/xsbaudrate.h"
+// #include "../../xsens/public/xspublic/xstypes/xscalibrateddata.h"
+// #include "../../xsens/public/xspublic/xscontroller/xsdeviceparameter.h"
+// #include "../../xsens/public/xspublic/xscontroller/xsdeviceparameteridentifier.h"
+// #include "../../xsens/include/xstypes/xscandataidentifier.h"
+// #include "../../xsens/public/xspublic/xstypes/xscanoutputconfiguration.h"
+// #include "../../xsens/public/xspublic/xstypes/xscanframeformat.h"
+// #include "../../xsens/public/xspublic/xscontroller/xsiccrepmotionresult.h"
+// #include "../../xsens/public/xspublic/xstypes/xstimestamp.h"
+// #include "../../xsens/public/xspublic/xstypes/xsrange.h"
+// #include "../../xsens/public/xspublic/xstypes/xssnapshot.h"
+// #include "../../xsens/public/xspublic/xstypes/xsglovesnapshot.h"
+// #include "../../xsens/public/xspublic/xstypes/xsrawgnsspvtdata.h"
+// #include "../../xsens/public/xspublic/xstypes/xsportinfo.h"
+// #include "../../xsens/public/xspublic/xstypes/xspressure.h"
+// #include "../../xsens/public/xspublic/xstypes/xshandid.h"
+// #include "../../xsens/public/xspublic/xstypes/xssdidata.h"
+// #include "../../xsens/public/xspublic/xstypes/xsscrdata.h"
+// #include "../../xsens/public/xspublic/xstypes/xsresultvalue.h"
+// #include "../../xsens/public/xspublic/xstypes/xsrawgnsssatinfo.h"
+// #include "../../xsens/include/xstypes/xsglovedata.h"
+// #include "../../xsens/public/xspublic/xscontroller/xscallbackplainc.h"
+// #include "../../xsens/public/xspublic/xscontroller/xscallback.h"
+// #include "../../xsens/public/xspublic/xscontroller/callbackmanagerxda.h"
+// #include "../../xsens/public/xspublic/xscontroller/communicator.h"
+// #include "../../xsens/public/xspublic/xscontroller/datalogger.h"
+// #include "../../xsens/public/xspublic/xscontroller/xsaccesscontrolmode.h"
+// #include "../../xsens/public/xspublic/xscontroller/xsalignmentframe.h"
+// #include "../../xsens/public/xspublic/xscontroller/xsconnectivitystate.h"
+// #include "../../xsens/public/xspublic/xstypes/xsdeviceoptionflag.h"
+// #include "../../xsens/public/xspublic/xscontroller/xserrormode.h"
+// #include "../../xsens/public/xspublic/xstypes/xsfilepos.h"
+// #include "../../xsens/public/xspublic/xscontroller/xsgnssplatform.h"
+// #include "../../xsens/public/xspublic/xscontroller/xsoperationalmode.h"
+// #include "../../xsens/public/xspublic/xstypes/xsoption.h"
+// #include "../../xsens/public/xspublic/xstypes/xsoutputconfiguration.h"
+// #include "../../xsens/public/xspublic/xscontroller/xsprotocoltype.h"
+// #include "../../xsens/public/xspublic/xscontroller/xsrejectreason.h"
+// #include "../../xsens/public/xspublic/xstypes/xsresetmethod.h"
+// #include "../../xsens/public/xspublic/xstypes/xsstringoutputtype.h"
+// #include "../../xsens/public/xspublic/xstypes/xssyncrole.h"
+// #include "../../xsens/public/xspublic/xscontroller/iprotocolhandler.h"
+// #include "../../xsens/public/xspublic/xscontroller/messagelocation.h"
+// #include "../../xsens/public/xspublic/xscontroller/openportstage.h"
+// #include "../../xsens/public/xspublic/xscontroller/replyobject.h"
+// #include "../../xsens/public/xspublic/xstypes/xssyncrole.h"
+// #include "../../xsens/public/xspublic/xscontroller/xsdeviceconfiguration.h"
+// #include "../../xsens/public/xspublic/xstypes/xsfilterprofile.h"
+// #include "../../xsens/public/xspublic/xstypes/xsdeviceid.h"
 %}
 
 #define XSTYPES_DLL_API 
@@ -79,11 +136,11 @@
 %include "../../xsens/public/xspublic/xstypes/xsfilterprofile.h"
 
 %include "../../xsens/public/xspublic/xstypes/xsanalogindata.h"
-%include "../../xsens/public/xspublic/xstypes/xsdatapacket.h"
+
 %include "../../xsens/public/xspublic/xstypes/xsbaudrate.h"
 
 %include "../../xsens/public/xspublic/xstypes/xscalibrateddata.h"
-%include "../../xsens/public/xspublic/xstypes/xsdataidentifier.h"
+
 
 
 %include "../../xsens/public/xspublic/xscontroller/xsdeviceparameter.h"
@@ -185,5 +242,3 @@
 #define XSDEPRECATED
 #define XSDEPRECATED_START
 %include "../../xsens/public/xspublic/xstypes/xsdeviceid.h"
-
-%include "array_variations.i"
