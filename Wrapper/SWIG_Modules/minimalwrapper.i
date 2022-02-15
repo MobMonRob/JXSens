@@ -7,8 +7,8 @@
 //%include "../../xsens/xsens_ros_mti_driver/lib/xspublic/xscontroller/xsscanner.h"
 #define XDA_DLL_API
 %{
-    #include "stub.cpp"
-   // #include  "../../xsens/examples/mtsdk/xda_public_cpp/stub.cpp"
+    #include "stub.h"
+   
     #include "../../xsens/xsens_ros_mti_driver/lib/xspublic/xstypes/xsdatapacket.h"
     #include "../../xsens/xsens_ros_mti_driver/lib/xspublic/xstypes/xsportinfo.h"
     #include "../../xsens/xsens_ros_mti_driver/lib/xspublic/xscontroller/xsdevice_def.h"

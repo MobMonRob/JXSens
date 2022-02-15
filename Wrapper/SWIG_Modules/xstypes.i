@@ -71,11 +71,15 @@
 // #include "../../xsens/public/xspublic/xstypes/xsdeviceid.h"
 %}
 
-#define XSTYPES_DLL_API 
+
 #define XSNOCOMEXPORT
-#define XSCPPPROTECTED
 #define XS_PACKED_STRUCT_START 
 #define XS_PACKED_STRUCT_END
+
+
+//these 2 imports set all necessary flag and macros
+%import "../../xsens/public/xspublic/xscontroller/xscontrollerconfig.h"
+%import "../../xsens/public/xspublic/xstypes/xstypesconfig.h"
 
 %include "rename_ops.i"
 

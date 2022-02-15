@@ -13,7 +13,7 @@
 
 
 
-using namespace std;
+
 
 class CallbackHandler : public XsCallback
 {
@@ -61,5 +61,5 @@ private:
 
 	size_t m_maxNumberOfPacketsInBuffer;
 	size_t m_numberOfPacketsInBuffer;
-	list<XsDataPacket> m_packetBuffer;
+	std::list<XsDataPacket> m_packetBuffer;
 };
