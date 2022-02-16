@@ -10,7 +10,7 @@ run() {
 	local -r swigJavaOutDir="$currentTarget/java/de/dhbw/rahmlab/"$wrapLibName"/impl"
 
 	local -r wrapLibTarget="$wrapLibDir/$currentTarget"
-	local -r wrapLibInclude="$wrapLibTarget/include/ur_client_library"
+	local -r wrapLibInclude="$wrapLibTarget/include/xsens_mti_library"
 
 	mkdir -p "$swigJavaOutDir"
 	mkdir -p "$currentTmp"
@@ -22,24 +22,24 @@ run() {
 
 	#local -r moduleOfInterest="urcl_data_package.i"
 	#local -r moduleOfInterest="urcl_log.i"
-	local -r moduleOfInterest="PlatformIndependent.i"
+	local -r moduleOfInterest="minimalwrapper.i"
+	local -r xsenspublicpath="../xsens/public/xspublic"
+	local -r swigModule="minimalwrapper.i"
+	# local -r filterModule="false"
 
-	local -r filterModule="false"
+	# for swigModule in ${SwigModulesArray[@]}
+	# do
+	# 	if [[ $filterModule == "true" ]]; then
+	# 		if [[ $swigModule != $moduleOfInterest ]]; then
+	# 			continue
+	# 		fi
+	# 	fi
 
-	for swigModule in ${SwigModulesArray[@]}
-	do
-		if [[ $filterModule == "true" ]]; then
-			if [[ $swigModule != $moduleOfInterest ]]; then
-				continue
-			fi
-		fi
+	# 	echo "->$swigModule"
 
-		echo "->$swigModule"
 
 		#-debug-tmused -debug-tmsearch -debug-typemap
-		swig -doxygen -Wextra -cpperraswarn -DSWIGWORDSIZE64 -c++ -java -package "de.dhbw.rahmlab."$wrapLibName".impl" -outdir "$swigJavaOutDir" -o "$currentTmp/"$swigModule"_wrap.cpp" -I"$wrapLibInclude" -I"$swigLibDirectory" "$swigModulesDirectory/$swigModule"
-	done
+	swig -c++ -java -package "de.dhbw.rahmlab."$wrapLibName".impl" -outdir "$swigJavaOutDir" -o "$currentTmp/"$swigModule"_wrap.cpp" -I"$wrapLibInclude" -I"$xsenspublicpath" -I"$swigLibDirectory" "$swigModulesDirectory/$swigModule" 
 }
-
 run_bash run $@
 

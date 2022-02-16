@@ -1,21 +1,21 @@
 %module array_variations
 
 %{
-#include "../../xsens/public/xspublic/xstypes/xsarray.h"
-#include "../../xsens/public/xspublic/xstypes/xsportinfoarray.h"
-#include "../../xsens/public/xspublic/xstypes/xsoutputconfigurationarray.h"
-#include "../../xsens/public/xspublic/xscontroller/xsdeviceptrarray.h"
-#include "../../xsens/public/xspublic/xstypes/xsfilterprofilearray.h"
-#include "../../xsens/public/xspublic/xstypes/xsdeviceidarray.h"
-#include "../../xsens/public/xspublic/xstypes/xssyncsettingarray.h"
-#include "../../xsens/public/xspublic/xstypes/xsstringoutputtypearray.h"
-#include "../../xsens/public/xspublic/xstypes/xscanoutputconfigurationarray.h"
+#include  "xstypes/xsarray.h"
+#include  "xstypes/xsportinfoarray.h"
+#include  "xstypes/xsoutputconfigurationarray.h"
+#include  "xscontroller/xsdeviceptrarray.h"
+#include  "xstypes/xsfilterprofilearray.h"
+#include  "xstypes/xsdeviceidarray.h"
+#include  "xstypes/xssyncsettingarray.h"
+#include  "xstypes/xsstringoutputtypearray.h"
+#include  "xstypes/xscanoutputconfigurationarray.h"
 %}
 
 %rename (XsPortInfoArrayClass) XsPortInfoArray;
 
 
-%include "../../xsens/public/xspublic/xstypes/xsarray.h"
+%include  "xstypes/xsarray.h"
 
 
 //-----------------
@@ -31,7 +31,7 @@
 %ignore XsArrayImpl< XsPortInfo,g_xsPortInfoArrayDescriptor,XsPortInfoArray >::at(XsSize);
 %ignore XsArrayImpl< XsPortInfo,g_xsPortInfoArrayDescriptor,XsPortInfoArray >::inherited();
 %template (XsPortInfoArray) XsArrayImpl<XsPortInfo,g_xsPortInfoArrayDescriptor,XsPortInfoArray>;
-%include "../../xsens/public/xspublic/xstypes/xsportinfoarray.h"
+%include  "xstypes/xsportinfoarray.h"
 
 
 
@@ -46,7 +46,7 @@
 
 
 %template (XsOutputConfigurationArray) XsArrayImpl< XsOutputConfiguration,g_xsOutputConfigurationArrayDescriptor,XsOutputConfigurationArray >;
-%include "../../xsens/public/xspublic/xstypes/xsoutputconfigurationarray.h"
+%include  "xstypes/xsoutputconfigurationarray.h"
 
 
 
@@ -62,7 +62,7 @@
 %ignore XsArrayImpl< XsDevice *,g_xsDevicePtrArrayDescriptor,XsDevicePtrArray >::inherited();
 
 %template (XsDevicePtrArray) XsArrayImpl< XsDevicePtr,g_xsDevicePtrArrayDescriptor,XsDevicePtrArray >;
-%include "../../xsens/public/xspublic/xscontroller/xsdeviceptrarray.h"
+%include  "xscontroller/xsdeviceptrarray.h"
 #undef XDA_DLL_API
 
 
@@ -75,7 +75,7 @@
 %ignore XsArrayImpl< XsFilterProfile,g_xsFilterProfileArrayDescriptor,XsFilterProfileArray >::inherited();
 
 %template (XsFilterProfileArray) XsArrayImpl< XsFilterProfile,g_xsFilterProfileArrayDescriptor,XsFilterProfileArray >;
-%include "../../xsens/public/xspublic/xstypes/xsfilterprofilearray.h"
+%include  "xstypes/xsfilterprofilearray.h"
 
 
 %ignore XsArrayImpl< XsDeviceId,g_xsDeviceIdArrayDescriptor,XsDeviceIdArray >::begin();
@@ -87,7 +87,7 @@
 %ignore XsArrayImpl< XsDeviceId,g_xsDeviceIdArrayDescriptor,XsDeviceIdArray >::inherited();
 
 %template (XsDeviceIdArray) XsArrayImpl< XsDeviceId,g_xsDeviceIdArrayDescriptor,XsDeviceIdArray >;
-%include "../../xsens/public/xspublic/xstypes/xsdeviceidarray.h"
+%include  "xstypes/xsdeviceidarray.h"
 
 %ignore XsArrayImpl< XsSyncSetting,g_xsSyncSettingArrayDescriptor,XsSyncSettingArray >::begin();
 %ignore XsArrayImpl< XsSyncSetting,g_xsSyncSettingArrayDescriptor,XsSyncSettingArray >::end();
@@ -98,7 +98,7 @@
 %ignore XsArrayImpl< XsSyncSetting,g_xsSyncSettingArrayDescriptor,XsSyncSettingArray >::inherited();
 
 %template (XsSyncSettingArray) XsArrayImpl< XsSyncSetting,g_xsSyncSettingArrayDescriptor,XsSyncSettingArray >;
-%include "../../xsens/public/xspublic/xstypes/xssyncsettingarray.h"
+%include  "xstypes/xssyncsettingarray.h"
 
 
 %ignore  XsArrayImpl< XsStringOutputType,g_xsStringOutputTypeArrayDescriptor,XsStringOutputTypeArray >::begin();
@@ -110,7 +110,7 @@
 %ignore XsArrayImpl< XsStringOutputType,g_xsStringOutputTypeArrayDescriptor,XsStringOutputTypeArray >::inherited() ;
 
 %template (XsStringOutputTypeArray) XsArrayImpl< XsStringOutputType,g_xsStringOutputTypeArrayDescriptor,XsStringOutputTypeArray >;
-%include "../../xsens/public/xspublic/xstypes/xsstringoutputtypearray.h"
+%include  "xstypes/xsstringoutputtypearray.h"
 
 // %ignore XsArrayImpl< XsCanOutputConfiguration,g_xsCanOutputConfigurationArrayDescriptor,XsCanOutputConfigurationArray >::begin();
 // %ignore XsArrayImpl< XsCanOutputConfiguration,g_xsCanOutputConfigurationArrayDescriptor,XsCanOutputConfigurationArray >::end();
@@ -121,4 +121,4 @@
 // %ignore XsArrayImpl< XsCanOutputConfiguration,g_xsCanOutputConfigurationArrayDescriptor,XsCanOutputConfigurationArray >::inherited();
 
 // %template (XsSCanOutputConfigurationArray) XsArrayImpl< XsCanOutputConfiguration,g_xsCanOutputConfigurationArrayDescriptor,XsCanOutputConfigurationArray >;
-// %include "../../xsens/public/xspublic/xstypes/xscanoutputconfigurationarray.h"
+// %include  "xstypes/xscanoutputconfigurationarray.h"

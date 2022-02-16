@@ -2,15 +2,15 @@
 
 
 %{
-#include "../../xsens/public/xspublic/xstypes/xsquaternion.h"
-#include "../../xsens/public/xspublic/xstypes/xseuler.h"
-#include "../../xsens/public/xspublic/xstypes/xsmatrix.h"
-#include "../../xsens/public/xspublic/xstypes/xsvector.h"
-#include "../../xsens/public/xspublic/xstypes/xsvector3.h"
-#include "../../xsens/public/xspublic/xstypes/xsushortvector.h"
-#include "../../xsens/public/xspublic/xstypes/xsmessage.h"
-#include "../../xsens/public/xspublic/xstypes/xsstring.h"
-#include "../../xsens/public/xspublic/xstypes/xsdatapacket.h"
+#include  "xstypes/xsquaternion.h"
+#include  "xstypes/xseuler.h"
+#include  "xstypes/xsmatrix.h"
+#include  "xstypes/xsvector.h"
+#include  "xstypes/xsvector3.h"
+#include  "xstypes/xsushortvector.h"
+#include  "xstypes/xsmessage.h"
+#include  "xstypes/xsstring.h"
+#include  "xstypes/xsdatapacket.h"
 %}
 %rename (XsQuaternionClass) XsQuaternion;
 %rename (XsDataPacketClass) XsDataPacket;
@@ -28,45 +28,45 @@
 %ignore XsQuaternion::x();
 %ignore XsQuaternion::y();
 %ignore XsQuaternion::z();
-%include "../../xsens/public/xspublic/xstypes/xsquaternion.h"
+%include  "xstypes/xsquaternion.h"
 
 
 //--------------
 //Euler
 %ignore XsEuler::operator[](XsSize);
-%include "../../xsens/public/xspublic/xstypes/xseuler.h"
+%include  "xstypes/xseuler.h"
 
 
 //--------------
 //Matrixes
 %ignore XsMatrix::operator[](XsSize);
-%include "../../xsens/public/xspublic/xstypes/xsmatrix.h"
+%include  "xstypes/xsmatrix.h"
 
 //--------------
 //Vector
 %ignore XsVector::at(XsSize);
 %ignore XsVector::operator[](XsSize);
-%include "../../xsens/public/xspublic/xstypes/xsvector.h"
+%include  "xstypes/xsvector.h"
 
 //--------------
 //vector 3
-%include "../../xsens/public/xspublic/xstypes/xsvector3.h"
+%include  "xstypes/xsvector3.h"
 
 //--------------
 //xsshortvector
 %ignore XsUShortVector::operator[](XsSize);
-%include "../../xsens/public/xspublic/xstypes/xsushortvector.h"
+%include  "xstypes/xsushortvector.h"
 
 //--------------
 //messages
-%include "../../xsens/public/xspublic/xstypes/xsmessage.h"
+%include  "xstypes/xsmessage.h"
 
 //--------------
 //Strings
 %ignore XsString::c_str();
-%include "../../xsens/public/xspublic/xstypes/xsstring.h"
+%include  "xstypes/xsstring.h"
 
 //-------------
 //datapacket
-%include "../../xsens/public/xspublic/xstypes/xsdatapacket.h"
+%include  "xstypes/xsdatapacket.h"
 

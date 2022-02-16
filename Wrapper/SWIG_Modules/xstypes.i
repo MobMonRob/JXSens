@@ -2,73 +2,73 @@
 %module types
 
 %{
-#include "../../xsens/public/xspublic/xscontroller/xsselftestresult.h"
-#include "../../xsens/public/xspublic/xstypes/xsstringoutputtype.h"
-#include "../../xsens/include/xstypes/xscandataidentifier.h"
-#include "../../xsens/public/xspublic/xscontroller/xsdeviceparameter.h"
-#include "../../xsens/public/xspublic/xscontroller/xsdeviceparameteridentifier.h"
-#include "../../xsens/public/xspublic/xstypes/xscanoutputconfiguration.h"
-#include "../../xsens/public/xspublic/xstypes/xscanframeformat.h"
-#include "../../xsens/public/xspublic/xscontroller/xsiccrepmotionresult.h"
-#include "../../xsens/public/xspublic/xscontroller/datalogger.h"
-#include "../../xsens/public/xspublic/xstypes/xsportinfo.h"
+#include  "xscontroller/xsselftestresult.h"
+#include  "xstypes/xsstringoutputtype.h"
+#include "xstypes/xscandataidentifier.h"
+#include  "xscontroller/xsdeviceparameter.h"
+#include  "xscontroller/xsdeviceparameteridentifier.h"
+#include  "xstypes/xscanoutputconfiguration.h"
+#include  "xstypes/xscanframeformat.h"
+#include  "xscontroller/xsiccrepmotionresult.h"
+#include  "xscontroller/datalogger.h"
+#include  "xstypes/xsportinfo.h"
 
 //using all includes results in more errors. This seems like the variant
-// #include "../../xsens/public/xspublic/xscontroller/xsselftestresult.h"
-// #include "../../xsens/public/xspublic/xstypes/xsstringoutputtype.h"
-// #include "../../xsens/public/xspublic/xscontroller/xsdeviceptr.h"
-// #include "../../xsens/public/xspublic/xstypes/xsdeviceid.h"
-// #include "../../xsens/public/xspublic/xstypes/xsfilterprofile.h"
-// #include "../../xsens/public/xspublic/xstypes/xsanalogindata.h"
-// #include "../../xsens/public/xspublic/xstypes/xsbaudrate.h"
-// #include "../../xsens/public/xspublic/xstypes/xscalibrateddata.h"
-// #include "../../xsens/public/xspublic/xscontroller/xsdeviceparameter.h"
-// #include "../../xsens/public/xspublic/xscontroller/xsdeviceparameteridentifier.h"
-// #include "../../xsens/include/xstypes/xscandataidentifier.h"
-// #include "../../xsens/public/xspublic/xstypes/xscanoutputconfiguration.h"
-// #include "../../xsens/public/xspublic/xstypes/xscanframeformat.h"
-// #include "../../xsens/public/xspublic/xscontroller/xsiccrepmotionresult.h"
-// #include "../../xsens/public/xspublic/xstypes/xstimestamp.h"
-// #include "../../xsens/public/xspublic/xstypes/xsrange.h"
-// #include "../../xsens/public/xspublic/xstypes/xssnapshot.h"
-// #include "../../xsens/public/xspublic/xstypes/xsglovesnapshot.h"
-// #include "../../xsens/public/xspublic/xstypes/xsrawgnsspvtdata.h"
-// #include "../../xsens/public/xspublic/xstypes/xsportinfo.h"
-// #include "../../xsens/public/xspublic/xstypes/xspressure.h"
-// #include "../../xsens/public/xspublic/xstypes/xshandid.h"
-// #include "../../xsens/public/xspublic/xstypes/xssdidata.h"
-// #include "../../xsens/public/xspublic/xstypes/xsscrdata.h"
-// #include "../../xsens/public/xspublic/xstypes/xsresultvalue.h"
-// #include "../../xsens/public/xspublic/xstypes/xsrawgnsssatinfo.h"
-// #include "../../xsens/include/xstypes/xsglovedata.h"
-// #include "../../xsens/public/xspublic/xscontroller/xscallbackplainc.h"
-// #include "../../xsens/public/xspublic/xscontroller/xscallback.h"
-// #include "../../xsens/public/xspublic/xscontroller/callbackmanagerxda.h"
-// #include "../../xsens/public/xspublic/xscontroller/communicator.h"
-// #include "../../xsens/public/xspublic/xscontroller/datalogger.h"
-// #include "../../xsens/public/xspublic/xscontroller/xsaccesscontrolmode.h"
-// #include "../../xsens/public/xspublic/xscontroller/xsalignmentframe.h"
-// #include "../../xsens/public/xspublic/xscontroller/xsconnectivitystate.h"
-// #include "../../xsens/public/xspublic/xstypes/xsdeviceoptionflag.h"
-// #include "../../xsens/public/xspublic/xscontroller/xserrormode.h"
-// #include "../../xsens/public/xspublic/xstypes/xsfilepos.h"
-// #include "../../xsens/public/xspublic/xscontroller/xsgnssplatform.h"
-// #include "../../xsens/public/xspublic/xscontroller/xsoperationalmode.h"
-// #include "../../xsens/public/xspublic/xstypes/xsoption.h"
-// #include "../../xsens/public/xspublic/xstypes/xsoutputconfiguration.h"
-// #include "../../xsens/public/xspublic/xscontroller/xsprotocoltype.h"
-// #include "../../xsens/public/xspublic/xscontroller/xsrejectreason.h"
-// #include "../../xsens/public/xspublic/xstypes/xsresetmethod.h"
-// #include "../../xsens/public/xspublic/xstypes/xsstringoutputtype.h"
-// #include "../../xsens/public/xspublic/xstypes/xssyncrole.h"
-// #include "../../xsens/public/xspublic/xscontroller/iprotocolhandler.h"
-// #include "../../xsens/public/xspublic/xscontroller/messagelocation.h"
-// #include "../../xsens/public/xspublic/xscontroller/openportstage.h"
-// #include "../../xsens/public/xspublic/xscontroller/replyobject.h"
-// #include "../../xsens/public/xspublic/xstypes/xssyncrole.h"
-// #include "../../xsens/public/xspublic/xscontroller/xsdeviceconfiguration.h"
-// #include "../../xsens/public/xspublic/xstypes/xsfilterprofile.h"
-// #include "../../xsens/public/xspublic/xstypes/xsdeviceid.h"
+// #include  "xscontroller/xsselftestresult.h"
+// #include  "xstypes/xsstringoutputtype.h"
+// #include  "xscontroller/xsdeviceptr.h"
+// #include  "xstypes/xsdeviceid.h"
+// #include  "xstypes/xsfilterprofile.h"
+// #include  "xstypes/xsanalogindata.h"
+// #include  "xstypes/xsbaudrate.h"
+// #include  "xstypes/xscalibrateddata.h"
+// #include  "xscontroller/xsdeviceparameter.h"
+// #include  "xscontroller/xsdeviceparameteridentifier.h"
+// #include "xstypes/xscandataidentifier.h"
+// #include  "xstypes/xscanoutputconfiguration.h"
+// #include  "xstypes/xscanframeformat.h"
+// #include  "xscontroller/xsiccrepmotionresult.h"
+// #include  "xstypes/xstimestamp.h"
+// #include  "xstypes/xsrange.h"
+// #include  "xstypes/xssnapshot.h"
+// #include  "xstypes/xsglovesnapshot.h"
+// #include  "xstypes/xsrawgnsspvtdata.h"
+// #include  "xstypes/xsportinfo.h"
+// #include  "xstypes/xspressure.h"
+// #include  "xstypes/xshandid.h"
+// #include  "xstypes/xssdidata.h"
+// #include  "xstypes/xsscrdata.h"
+// #include  "xstypes/xsresultvalue.h"
+// #include  "xstypes/xsrawgnsssatinfo.h"
+// #include "xstypes/xsglovedata.h"
+// #include  "xscontroller/xscallbackplainc.h"
+// #include  "xscontroller/xscallback.h"
+// #include  "xscontroller/callbackmanagerxda.h"
+// #include  "xscontroller/communicator.h"
+// #include  "xscontroller/datalogger.h"
+// #include  "xscontroller/xsaccesscontrolmode.h"
+// #include  "xscontroller/xsalignmentframe.h"
+// #include  "xscontroller/xsconnectivitystate.h"
+// #include  "xstypes/xsdeviceoptionflag.h"
+// #include  "xscontroller/xserrormode.h"
+// #include  "xstypes/xsfilepos.h"
+// #include  "xscontroller/xsgnssplatform.h"
+// #include  "xscontroller/xsoperationalmode.h"
+// #include  "xstypes/xsoption.h"
+// #include  "xstypes/xsoutputconfiguration.h"
+// #include  "xscontroller/xsprotocoltype.h"
+// #include  "xscontroller/xsrejectreason.h"
+// #include  "xstypes/xsresetmethod.h"
+// #include  "xstypes/xsstringoutputtype.h"
+// #include  "xstypes/xssyncrole.h"
+// #include  "xscontroller/iprotocolhandler.h"
+// #include  "xscontroller/messagelocation.h"
+// #include  "xscontroller/openportstage.h"
+// #include  "xscontroller/replyobject.h"
+// #include  "xstypes/xssyncrole.h"
+// #include  "xscontroller/xsdeviceconfiguration.h"
+// #include  "xstypes/xsfilterprofile.h"
+// #include  "xstypes/xsdeviceid.h"
 %}
 
 
@@ -78,8 +78,8 @@
 
 
 //these 2 imports set all necessary flag and macros
-%import "../../xsens/public/xspublic/xscontroller/xscontrollerconfig.h"
-%import "../../xsens/public/xspublic/xstypes/xstypesconfig.h"
+%import  "xscontroller/xscontrollerconfig.h"
+%import  "xstypes/xstypesconfig.h"
 
 %include "rename_ops.i"
 
@@ -90,7 +90,7 @@
 
 
 
-%include "../../xsens/public/xspublic/xscontroller/xsselftestresult.h"
+%include  "xscontroller/xsselftestresult.h"
 
 %include "cpointer.i" 
 %include "primitive_type_ptr.i"
@@ -128,69 +128,69 @@
 
 
 //stringoutputtype has to be include before xsfilterprofile
-%include "../../xsens/public/xspublic/xstypes/xsstringoutputtype.h"
+%include  "xstypes/xsstringoutputtype.h"
 
-%include "../../xsens/public/xspublic/xscontroller/xsdeviceptr.h"
+%include  "xscontroller/xsdeviceptr.h"
 #define XSDEPRECATED_START
 #define XSDEPRECATED 
-%include "../../xsens/public/xspublic/xstypes/xsdeviceid.h"
+%include  "xstypes/xsdeviceid.h"
 #undef XSDEPRECATED_START
 #undef XSDEPRECATED 
 %include "array_variations.i"
-%include "../../xsens/public/xspublic/xstypes/xsfilterprofile.h"
+%include  "xstypes/xsfilterprofile.h"
 
-%include "../../xsens/public/xspublic/xstypes/xsanalogindata.h"
+%include  "xstypes/xsanalogindata.h"
 
-%include "../../xsens/public/xspublic/xstypes/xsbaudrate.h"
+%include  "xstypes/xsbaudrate.h"
 
-%include "../../xsens/public/xspublic/xstypes/xscalibrateddata.h"
-
-
-
-%include "../../xsens/public/xspublic/xscontroller/xsdeviceparameter.h"
-%include "../../xsens/public/xspublic/xscontroller/xsdeviceparameteridentifier.h"
-
-
-%include "../../xsens/include/xstypes/xscandataidentifier.h"
-%include "../../xsens/public/xspublic/xstypes/xscanoutputconfiguration.h"
+%include  "xstypes/xscalibrateddata.h"
 
 
 
+%include  "xscontroller/xsdeviceparameter.h"
+%include  "xscontroller/xsdeviceparameteridentifier.h"
 
 
-%include "../../xsens/public/xspublic/xstypes/xscanframeformat.h"
-%include "../../xsens/public/xspublic/xscontroller/xsiccrepmotionresult.h"
+%include "xstypes/xscandataidentifier.h"
+%include  "xstypes/xscanoutputconfiguration.h"
 
 
-%include "../../xsens/public/xspublic/xstypes/xstimestamp.h"
 
-%include "../../xsens/public/xspublic/xstypes/xsrange.h"
-%include "../../xsens/public/xspublic/xstypes/xssnapshot.h"
-%include "../../xsens/public/xspublic/xstypes/xsglovesnapshot.h"
 
-%include "../../xsens/public/xspublic/xstypes/xsrawgnsspvtdata.h"
+
+%include  "xstypes/xscanframeformat.h"
+%include  "xscontroller/xsiccrepmotionresult.h"
+
+
+%include  "xstypes/xstimestamp.h"
+
+%include  "xstypes/xsrange.h"
+%include  "xstypes/xssnapshot.h"
+%include  "xstypes/xsglovesnapshot.h"
+
+%include  "xstypes/xsrawgnsspvtdata.h"
 
 
 
 //-----------------
 
-%include "../../xsens/public/xspublic/xstypes/xsportinfo.h"
-%include "../../xsens/public/xspublic/xstypes/xspressure.h"
-%include "../../xsens/public/xspublic/xstypes/xshandid.h"
-%include "../../xsens/public/xspublic/xstypes/xssdidata.h"
-%include "../../xsens/public/xspublic/xstypes/xsscrdata.h"
-%include "../../xsens/public/xspublic/xstypes/xsresultvalue.h"
-%include "../../xsens/public/xspublic/xstypes/xsrawgnsssatinfo.h"
-%include "../../xsens/include/xstypes/xsglovedata.h"
+%include  "xstypes/xsportinfo.h"
+%include  "xstypes/xspressure.h"
+%include  "xstypes/xshandid.h"
+%include  "xstypes/xssdidata.h"
+%include  "xstypes/xsscrdata.h"
+%include  "xstypes/xsresultvalue.h"
+%include  "xstypes/xsrawgnsssatinfo.h"
+%include "xstypes/xsglovedata.h"
 
 
-%import "../../xsens/public/xspublic/xscontroller/xscallbackplainc.h"
-%import "../../xsens/public/xspublic/xscontroller/xscallback.h"
-%include "../../xsens/public/xspublic/xscontroller/callbackmanagerxda.h"
-%include "../../xsens/public/xspublic/xscontroller/communicator.h"
-%include "../../xsens/public/xspublic/xscontroller/datalogger.h"
-%include "../../xsens/public/xspublic/xscontroller/xsaccesscontrolmode.h"
-%include "../../xsens/public/xspublic/xscontroller/xsalignmentframe.h"
+%import  "xscontroller/xscallbackplainc.h"
+%import  "xscontroller/xscallback.h"
+%include  "xscontroller/callbackmanagerxda.h"
+%include  "xscontroller/communicator.h"
+%include  "xscontroller/datalogger.h"
+%include  "xscontroller/xsaccesscontrolmode.h"
+%include  "xscontroller/xsalignmentframe.h"
 
 
 
@@ -202,47 +202,47 @@
 
 
 #define XDA_DLL_API
-%include "../../xsens/public/xspublic/xscontroller/xsconnectivitystate.h"
+%include  "xscontroller/xsconnectivitystate.h"
 #undef XDA_DLL_API
 
-%include "../../xsens/public/xspublic/xstypes/xsdeviceoptionflag.h"
+%include  "xstypes/xsdeviceoptionflag.h"
 
 #define XDA_DLL_API
-%include "../../xsens/public/xspublic/xscontroller/xsdevicestate.h"
+%include  "xscontroller/xsdevicestate.h"
 #undef XDA_DLL_API
 
-%include "../../xsens/public/xspublic/xscontroller/xserrormode.h"
-%include "../../xsens/public/xspublic/xstypes/xsfilepos.h"
-%include "../../xsens/public/xspublic/xscontroller/xsgnssplatform.h"
+%include  "xscontroller/xserrormode.h"
+%include  "xstypes/xsfilepos.h"
+%include  "xscontroller/xsgnssplatform.h"
 
 
-%include "../../xsens/public/xspublic/xscontroller/xsoperationalmode.h"
-%include "../../xsens/public/xspublic/xstypes/xsoption.h"
+%include  "xscontroller/xsoperationalmode.h"
+%include  "xstypes/xsoption.h"
 
-%include "../../xsens/public/xspublic/xstypes/xsoutputconfiguration.h"
+%include  "xstypes/xsoutputconfiguration.h"
 
 //-----------------------------
 
-%include "../../xsens/public/xspublic/xscontroller/xsprotocoltype.h"
+%include  "xscontroller/xsprotocoltype.h"
 #define XDA_DLL_API
-%include "../../xsens/public/xspublic/xscontroller/xsrejectreason.h"
+%include  "xscontroller/xsrejectreason.h"
 #undef XDA_DLL_API
-%include "../../xsens/public/xspublic/xstypes/xsresetmethod.h"
+%include  "xstypes/xsresetmethod.h"
 
-%include "../../xsens/public/xspublic/xstypes/xsstringoutputtype.h"
-%include "../../xsens/public/xspublic/xstypes/xssyncrole.h"
-%include "../../xsens/public/xspublic/xscontroller/iprotocolhandler.h"
-%include "../../xsens/public/xspublic/xscontroller/messagelocation.h"
-%include "../../xsens/public/xspublic/xscontroller/openportstage.h"
-%include "../../xsens/public/xspublic/xscontroller/replyobject.h"
-%include "../../xsens/public/xspublic/xstypes/xssyncrole.h"
+%include  "xstypes/xsstringoutputtype.h"
+%include  "xstypes/xssyncrole.h"
+%include  "xscontroller/iprotocolhandler.h"
+%include  "xscontroller/messagelocation.h"
+%include  "xscontroller/openportstage.h"
+%include  "xscontroller/replyobject.h"
+%include  "xstypes/xssyncrole.h"
 
  #define XDA_DLL_API 
- %include "../../xsens/public/xspublic/xscontroller/xsdeviceconfiguration.h"
+ %include  "xscontroller/xsdeviceconfiguration.h"
  #undef XDA_DLL_API 
 
- %include "../../xsens/public/xspublic/xstypes/xsfilterprofile.h"
+ %include  "xstypes/xsfilterprofile.h"
 
 #define XSDEPRECATED
 #define XSDEPRECATED_START
-%include "../../xsens/public/xspublic/xstypes/xsdeviceid.h"
+%include  "xstypes/xsdeviceid.h"

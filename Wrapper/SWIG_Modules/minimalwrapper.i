@@ -4,39 +4,39 @@
 #pragma SWIG nowarn=315
 
 %include "xstypes.i"
-//%include "../../xsens/xsens_ros_mti_driver/lib/xspublic/xscontroller/xsscanner.h"
-#define XDA_DLL_API
+//%include  "xscontroller/xsscanner.h"
+
 %{
     #include "stub.h"
    
-    #include "../../xsens/xsens_ros_mti_driver/lib/xspublic/xstypes/xsdatapacket.h"
-    #include "../../xsens/xsens_ros_mti_driver/lib/xspublic/xstypes/xsportinfo.h"
-    #include "../../xsens/xsens_ros_mti_driver/lib/xspublic/xscontroller/xsdevice_def.h"
+    #include  "xstypes/xsdatapacket.h"
+    #include  "xstypes/xsportinfo.h"
+    #include  "xscontroller/xsdevice_def.h"
 
 
 %}
-%import "../../xsens/public/xspublic/xscontroller/xscallbackplainc.h"
-%import "../../xsens/public/xspublic/xscontroller/xscallback.h"
-%include  "../../xsens/examples/mtsdk/xda_public_cpp/stub.cpp"
+%import  "xscontroller/xscallbackplainc.h"
+%import  "xscontroller/xscallback.h"
+//%include  "../../xsens/examples/mtsdk/xda_public_cpp/stub.cpp"
 %rename(XsDataPacketClass) XsDataPacket;
-#define XSTYPES_DLL_API
+
 #define XSNOCOMEXPORT
 %rename(opSet) operator=;
-%include "../../xsens/public/xspublic/xstypes/xsdatapacket.h"
-#undef XSTYPES_DLL_API
+%include  "xstypes/xsdatapacket.h"
+
 #undef XSNOCOMEXPORT
-%include "../../xsens/public/xspublic/xstypes/xsportinfo.h"
+%include  "xstypes/xsportinfo.h"
 %rename(opEquals) operator==;
 %rename(opLessThen) operator<;
 #define XSENS_NO_PORT_NUMBERS
-%include "../../xsens/public/xspublic/xscontroller/xsdevice_def.h"
+%include  "xscontroller/xsdevice_def.h"
 #undef XSENS_NO_PORT_NUMBERS
 #define XSNOCOMEXPORT
-%include "../../xsens/public/xspublic/xscontroller/xscontrol_def.h"
+%include  "xscontroller/xscontrol_def.h"
 #undef XSNOCOMEXPORT
 //struct XsDataPacket{};
 %{
-#include "../../xsens/public/xspublic/xscontroller/xsscanner.h"
+#include  "xscontroller/xsscanner.h"
 %}
 class XsScanner{
   public:

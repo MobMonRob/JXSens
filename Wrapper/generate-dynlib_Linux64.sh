@@ -10,7 +10,7 @@ run() {
 	mkdir -p "$linuxTarget"
 
 	local -r wrapLibTarget="$wrapLibDir/$linuxTarget"
-	local -r wrapLibInclude="$wrapLibTarget/include/ur_client_library"
+	local -r wrapLibInclude="$wrapLibTarget/include/xsens_mti_library"
 	local -r libInclude="$wrapLibTarget/include"
 	local -r wrapLibBinary="$wrapLibTarget/lib"
 
@@ -24,7 +24,7 @@ run() {
 	#-c für nicht linken (nur .o erzeugen)
 	#-shared .so muss tun, damit sicher der Fehler nicht hier liegt.
 	g++ -c -fPIC -O3 -cpp -std=c++17 "$linuxTmp/$swigCpp" \
-	-I"$javaIncludeLinux/linux" -I"$javaIncludeLinux" -I"$wrapLibInclude" -I"$libInclude" \
+	-I"$javaIncludeLinux/linux" -I"$javaIncludeLinux" -I"$wrapLibInclude" -I"$xsenspublicpath" -I"$swigmodules" -I"$libInclude" \
 	-o "$linuxTmp/$swigCpp.o"
 	done
 
