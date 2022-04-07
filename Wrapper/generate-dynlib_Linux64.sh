@@ -24,7 +24,7 @@ run() {
 	#-c für nicht linken (nur .o erzeugen)
 	#-shared .so muss tun, damit sicher der Fehler nicht hier liegt.
 	g++ -shared -fPIC -O3 -cpp -std=c++17 "$linuxTmp/$swigCpp" \
-	-shared -L../xsens/public/xspublic/ -l:xsenslib.so -I"$javaIncludeLinux/linux" -I"$javaIncludeLinux" -I"$wrapLibInclude" -I"$xsenspublicpath" -I"$swigmodules" -I"$libInclude" \
+	-shared -L../xsens/public/xspublic/ -Wl, --verbose -l:xsenslib.so  -I"$javaIncludeLinux/linux" -I"$javaIncludeLinux" -I"$wrapLibInclude" -I"$xsenspublicpath" -I"$swigmodules" -I"$libInclude" \
 	-o "$linuxTmp/$swigCpp.o" 
 	done
 	

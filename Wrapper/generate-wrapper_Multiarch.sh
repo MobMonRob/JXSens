@@ -20,8 +20,7 @@ run() {
 
 	local -r SwigModulesArray=($(find "$swigModulesDirectory"/* -maxdepth 0 -mindepth 0 -type f -printf '%f\n'))
 
-	#local -r moduleOfInterest="urcl_data_package.i"
-	#local -r moduleOfInterest="urcl_log.i"
+	
 	local -r moduleOfInterest="minimalwrapper.i"
 	local -r xsenspublicpath="../xsens/public/xspublic"
 	local -r swigModule="minimalwrapper.i"
