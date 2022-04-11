@@ -23,13 +23,10 @@ run() {
 	#-flto
 	#-c für nicht linken (nur .o erzeugen)
 	#-shared .so muss tun, damit sicher der Fehler nicht hier liegt.
-	g++ -shared -fPIC -O3 -cpp -std=c++17 "$linuxTmp/$swigCpp" \
-	-shared -L../xsens/public/xspublic/ -Wl, --verbose -l:xsenslib.so  -I"$javaIncludeLinux/linux" -I"$javaIncludeLinux" -I"$wrapLibInclude" -I"$xsenspublicpath" -I"$swigmodules" -I"$libInclude" \
-	-o "$linuxTmp/$swigCpp.o" 
+	g++ -c -fPIC -O3 -cpp -std=c++17 "$linuxTmp/$swigCpp" \
+	-shared -I"$javaIncludeLinux/linux" -I"$javaIncludeLinux" -I"$wrapLibInclude" -I"$xsenspublicpath" -I"$swigmodules" -I"$libInclude" \
+	-o "$linuxTmp/$swigCpp.o"
 	done
-	
-
-	
 
 	local -r oArray=(${SwigCppArray[@]/%/.o})
 	local -r pathArray=(${oArray[@]/#/$linuxTmp/})
@@ -40,6 +37,7 @@ run() {
 	${pathArray[@]} \
 	 -lpthread \
 	-Wl,--end-group \
+	-L../xsens/public/xspublic/ -l:libxsens.so \
 	-Wl,-rpath,'$ORIGIN/.' -o "$linuxTarget/libJ"$wrapLibName".so" \
 	-Wl,--as-needed -Wl,--no-undefined -Wl,--no-allow-shlib-undefined
 }
