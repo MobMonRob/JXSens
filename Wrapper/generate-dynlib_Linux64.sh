@@ -35,11 +35,12 @@ run() {
 	g++ -shared -L"$wrapLibBinary" \
 	-Wl,--start-group \
 	${pathArray[@]} \
-	 -lpthread \
-	-Wl,--end-group \
+	-lpthread \
 	-L../xsens/public/xspublic/ -l:libxsens.so \
+	-Wl,--end-group \
 	-Wl,-rpath,'$ORIGIN/.' -o "$linuxTarget/libJ"$wrapLibName".so" \
-	-Wl,--as-needed -Wl,--no-undefined -Wl,--no-allow-shlib-undefined
+	-Wl,--as-needed -Wl,--no-undefined
+	#-Wl,--no-allow-shlib-undefined
 }
 
 run_bash run $@
